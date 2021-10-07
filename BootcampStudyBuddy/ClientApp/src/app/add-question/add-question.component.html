@@ -1,0 +1,23 @@
+<h2>Add a Question</h2>
+
+<form>
+  <!--<label>QuestionId</label>
+  <input type="text" class="form-control" id="questionId" name="questionId" #questionId />-->
+
+  <label>Question</label>
+  <input type="text" class="form-control" id="questions" name="questions" #questions />
+
+  <label>Answer</label>
+  <input type="text" class="form-control" id="answers" name="answers" #answers />
+
+  <!--<label>Favorites</label>
+  <input type="text" class="form-control" id="favorites" name="favorites" #favorites />-->
+
+  
+  <button class="btn-primary btn" (click)="addQuestion(
+            questions.value, answers.value)">
+    Add
+  </button>
+
+</form>
+

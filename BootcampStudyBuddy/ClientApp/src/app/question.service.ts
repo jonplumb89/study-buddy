@@ -14,4 +14,8 @@ export class QuestionService {
   GetBootcampQuestions() {
     return this.httpClient.get<Question[]>(this.apiUrl);
   }
+
+  postBootcampQuestion(question: Question): Observable<Question> {
+    return this.httpClient.post<Question>(this.apiUrl, question);
+  }
 }

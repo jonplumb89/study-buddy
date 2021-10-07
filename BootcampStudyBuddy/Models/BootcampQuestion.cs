@@ -15,7 +15,7 @@ namespace BootcampStudyBuddy.Models
         public int QuestionId { get; set; }
         public string Questions { get; set; }
         public string Answers { get; set; }
-        public bool? Favorites { get; set; }
+        public bool Favorites { get; set; }
 
         public virtual ICollection<BootcampFavorite> BootcampFavorites { get; set; }
     }

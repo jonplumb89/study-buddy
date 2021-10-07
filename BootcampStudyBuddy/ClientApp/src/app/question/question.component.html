@@ -1,0 +1,24 @@
+<h2>These are the available Questions</h2>
+
+<p *ngIf="!questions"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="questions">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Questions</th>
+      <th>Answers</th>
+      <th>Favorites</th>
+      <!--//<th>City</th>-->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let question of questions">
+      <td>{{ question.questionId }}</td>
+      <td>{{ question.questions }}</td>
+      <td>{{ question.answers }}</td>
+      <td>{{ question.favorites }}</td>
+
+    </tr>
+  </tbody>
+</table>

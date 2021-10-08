@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { QuestionComponent } from './question/question.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
+import { UsersComponent } from './users/users.component';
 import { AddFavoritesComponent } from './add-favorites/add-favorites.component';
 
 @NgModule({
@@ -21,6 +22,8 @@ import { AddFavoritesComponent } from './add-favorites/add-favorites.component';
     CounterComponent,
     FetchDataComponent,
     QuestionComponent,
+
+    UsersComponent
     AddQuestionComponent,
     AddFavoritesComponent
   ],
@@ -33,7 +36,8 @@ import { AddFavoritesComponent } from './add-favorites/add-favorites.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'bootcampquestions', component: QuestionComponent },
-      { path: 'add-question', component: AddQuestionComponent }
+      { path: 'add-question', component: AddQuestionComponent },
+      { path: 'users', component: UsersComponent }
     ])
   ],
   providers: [],

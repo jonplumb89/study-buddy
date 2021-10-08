@@ -3,5 +3,4 @@ export class Question {
   questions: string;
   answers: string;
   favorites: string;
-
 }

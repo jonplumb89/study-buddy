@@ -18,6 +18,10 @@
       <td>{{ question.questions }}</td>
       <td>{{ question.answers }}</td>
       <td>{{ question.favorites }}</td>
+      <button class="btn-primary btn" (click)="Save(
+            favorites.value)">
+        Save
+      </button>
 
     </tr>
   </tbody>

@@ -1,0 +1,18 @@
+.title {
+  text-align: center;
+}
+
+.adding {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+#butt {
+  width: 50%;
+}
+
+#answers {
+    margin-bottom: 7px;
+}

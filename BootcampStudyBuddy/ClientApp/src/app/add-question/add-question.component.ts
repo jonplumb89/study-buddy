@@ -28,7 +28,7 @@ export class AddQuestionComponent implements OnInit {
     this.questionService.postBootcampQuestion(question)
       .subscribe(result => {
         //logging here
-        this.router.navigateByUrl('/bootcampquestions')
+        this.router.navigateByUrl('/bootcampfavorites')
       }, (error: Response) => {
         if (error.status === 404) {
           console.log('Not Found');

@@ -1,6 +1,6 @@
-<h2>Add a Question</h2>
+<h2 class="title">Add a Question</h2>
 
-<form>
+<form class="adding">
   <!--<label>QuestionId</label>
   <input type="text" class="form-control" id="questionId" name="questionId" #questionId />-->
 
@@ -14,7 +14,7 @@
   <input type="text" class="form-control" id="favorites" name="favorites" #favorites />-->
 
   
-  <button class="btn-primary btn" (click)="addQuestion(
+  <button id="butt" class="btn-primary btn" (click)="addQuestion(
             questions.value, answers.value)">
     Add
   </button>

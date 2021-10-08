@@ -5,19 +5,21 @@
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="questions">
   <thead>
     <tr>
-      <th>Id</th>
+      <th>favorite</th>
       <th>Questions</th>
       <th>Answers</th>
-      <th>Favorites</th>
+
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let question of questions">
-      <td>{{ question.questionId }}</td>
-      <td>{{ question.questions }}</td>
-      <td>{{ question.answers }}</td>
-      <td>{{ question.favorites }}</td>
+      <td><button class="btn-primary btn" id="{{ question.questionId }}_save_button" (click)="addQuestion(questions.value, answers.vale)">Save</button></td>
+      <td #questions >{{ question.questions }}</td>
+      <td id="{{ question.questionId }}" answer="false" width="400px" #answers>Click the show button to view the answer!</td>
+      <td><button (click)="show(question.questionId)" id="{{ question.questionId }}_button" class="btn-primary btn">show</button></td>
+      <td><button (click)="dueces(question.questionId)" class="btn-primary btn">Delete</button></td>
 
     </tr>
+
   </tbody>
 </table>

@@ -1,0 +1,25 @@
+<h2>Welcome to your favorites</h2>
+
+<p *ngIf="!favorites"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="favorites">
+  <thead>
+    <tr>
+      <th>Favorites Id</th>
+      <th>Questions Id</th>
+      <th>Users Id</th>
+      <th>Questions</th>
+      <th>Answers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let favorite of favorites">
+      <td>{{ favorite.favoritesId }}</td>
+      <td>{{ favorite.questionId }}</td>
+      <td>{{ favorite.usersId }}</td>
+      <td>{{ favorite.questions }}</td>
+      <td>{{ favorite.answers }}</td>
+
+    </tr>
+  </tbody>
+</table>

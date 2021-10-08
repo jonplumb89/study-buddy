@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { QuestionComponent } from './question/question.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
+import { AddFavoritesComponent } from './add-favorites/add-favorites.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AddQuestionComponent } from './add-question/add-question.component';
     CounterComponent,
     FetchDataComponent,
     QuestionComponent,
-    AddQuestionComponent
+    AddQuestionComponent,
+    AddFavoritesComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

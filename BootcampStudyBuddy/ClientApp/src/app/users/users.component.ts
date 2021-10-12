@@ -8,10 +8,13 @@ import { UsersService } from '../users.service';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
+
 export class UsersComponent implements OnInit {
 
   users: Users[];
   constructor(private router: Router, private userService: UsersService) { }
+
+  currentUser: Users = null;
 
   ngOnInit() {
     if (!window.localStorage.getItem('user')) {
@@ -28,8 +31,18 @@ export class UsersComponent implements OnInit {
 
   login(user) {
     console.log(user);
+    this.currentUser = user;
     window.localStorage.setItem('user', JSON.stringify(user));
     this.router.navigateByUrl('/bootcampquestions');
+  }
+
+  logout() {
+    window.localStorage.removeItem('user');
+    this.router.navigateByUrl('/');
+  }
+
+  public isLoggedIn() {
+    return (this.currentUser != null);
   }
 
 }

@@ -15,6 +15,7 @@ import { UsersComponent } from './users/users.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { UserGuard } from './user.guard';
 import { LogoutButtonComponent } from './logout-button/logout-button.component';
+import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { LogoutButtonComponent } from './logout-button/logout-button.component';
       { path: 'bootcampquestions', component: QuestionComponent, canActivate: [UserGuard] },
       { path: 'add-question', component: AddQuestionComponent, canActivate: [UserGuard] },
       { path: 'users', component: UsersComponent },
-      { path: 'favorites', component: FavoritesComponent, canActivate: [UserGuard] }
+      { path: 'favorites', component: FavoritesComponent,}
     ])
   ],
   providers: [

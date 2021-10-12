@@ -5,13 +5,14 @@ import { Router } from "@angular/router";
   selector: 'logout-button',
   templateUrl: './logout-button.component.html'
 })
+
 export class LogoutButtonComponent {
 
   constructor(private router: Router) { }
 
   logout() {
     console.log('logout hit')
-    window.localStorage.clear();
+    window.localStorage.removeItem('user')
     this.router.navigateByUrl('/')
   }
 }

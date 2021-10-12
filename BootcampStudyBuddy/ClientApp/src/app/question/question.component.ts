@@ -3,6 +3,7 @@ import { Question } from '../Models/Question';
 import { QuestionService } from '../question.service';
 import { Router } from '@angular/router';
 import { FavoritesService } from '../favorites.service';
+import { Favorites } from '../Models/Favorites';
 
 @Component({
   selector: 'app-question',
@@ -11,10 +12,13 @@ import { FavoritesService } from '../favorites.service';
 })
 export class QuestionComponent implements OnInit {
 
+  user: any = null;
+
   questions: Question[];
   constructor(private questionService: QuestionService, private router: Router, private favoriteService: FavoritesService) { }
 
   ngOnInit() {
+    this.user = JSON.parse(window.localStorage.getItem('user'));
     this.questionService.GetBootcampQuestions()
       .subscribe(result => {
         this.questions = result;
@@ -54,31 +58,34 @@ export class QuestionComponent implements OnInit {
     }
   }
 
-  addQuestion(
-    /*questionId: number,*/
-    questions: string, answers: string) {
+  addQuestion(question: any) {
 
-    let question = new Question();
-    /*question.questionId = questionId;*/
-    question.questions = questions;
-    question.answers = answers;
-    /* question.favorites = favorites;*/
+    console.log(question)
+    this.favoriteService.postBootcampFavorites(question).subscribe(result => {
+      this.router.navigateByUrl('/bootcampquestions');
+    })
 
-    this.favoriteService.postBootcampFavorites(question)
-      .subscribe(result => {
-        //logging here
-        this.router.navigateByUrl('/bootcampquestions')
-      }, (error: Response) => {
-        if (error.status === 404) {
-          console.log('Not Found');
-          alert('Not Found');
-        }
+    //let question = new Question();
+    ///*question.questionId = questionId;*/
+    //question.questions = questions;
+    //question.answers = answers;
+    ///* question.favorites = favorites;*/
 
-        if (error.status === 500) {
+    //this.favoriteService.postBootcampFavorites(question)
+    //  .subscribe(result => {
+    //    //logging here
+    //    this.router.navigateByUrl('/bootcampquestions')
+    //  }, (error: Response) => {
+    //    if (error.status === 404) {
+    //      console.log('Not Found');
+    //      alert('Not Found');
+    //    }
 
-        }
-        console.log(error.json);
-      });
+    //    if (error.status === 500) {
+
+    //    }
+    //    console.log(error.json);
+    //  });
   }
 
 

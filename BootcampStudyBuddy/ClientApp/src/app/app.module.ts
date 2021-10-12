@@ -13,6 +13,8 @@ import { QuestionComponent } from './question/question.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { UsersComponent } from './users/users.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { UserGuard } from './user.guard';
+import { LogoutButtonComponent } from './logout-button/logout-button.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
     QuestionComponent,
     AddQuestionComponent,
     UsersComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    LogoutButtonComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -34,13 +37,16 @@ import { FavoritesComponent } from './favorites/favorites.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'bootcampquestions', component: QuestionComponent },
-      { path: 'add-question', component: AddQuestionComponent },
+      { path: 'bootcampquestions', component: QuestionComponent, canActivate: [UserGuard] },
+      { path: 'add-question', component: AddQuestionComponent, canActivate: [UserGuard] },
       { path: 'users', component: UsersComponent },
-      { path: 'favorites', component: FavoritesComponent }
+      { path: 'favorites', component: FavoritesComponent, canActivate: [UserGuard] }
     ])
   ],
-  providers: [],
+  providers: [
+    UserGuard
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

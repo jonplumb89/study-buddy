@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Users } from '../Models/Users';
 import { UsersService } from '../users.service';
 
@@ -10,14 +11,25 @@ import { UsersService } from '../users.service';
 export class UsersComponent implements OnInit {
 
   users: Users[];
-  constructor(private userService: UsersService) { }
+  constructor(private router: Router, private userService: UsersService) { }
 
   ngOnInit() {
-    this.userService.GetUser()
-      .subscribe(result => {
-        console.log(result)
-        this.users = result;
-      })
+    if (!window.localStorage.getItem('user')) {
+      this.userService.GetUser()
+        .subscribe(result => {
+          console.log(result)
+          this.users = result;
+        })
+    } else {
+      this.router.navigateByUrl('/bootcampquestions');
+    }
+
+  }
+
+  login(user) {
+    console.log(user);
+    window.localStorage.setItem('user', JSON.stringify(user));
+    this.router.navigateByUrl('/bootcampquestions');
   }
 
 }

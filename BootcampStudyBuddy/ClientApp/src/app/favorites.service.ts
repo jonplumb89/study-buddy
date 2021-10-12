@@ -16,7 +16,13 @@ export class FavoritesService {
     return this.httpClient.get<Favorites[]>(this.apiUrl);
   }
 
-  postBootcampFavorites(question: Question): Observable<Question> {
-    return this.httpClient.post<Question>(this.apiUrl, question);
+  postBootcampFavorites(favorite: any): Observable<any> {
+    const user = JSON.parse(window.localStorage.getItem('user'))
+    const f = { answers: favorite.answers, questions: favorite.questions, usersId: user.userId, questionId: favorite.questionId}
+    return this.httpClient.post<Question>(this.apiUrl, f);
+  }
+
+  delete(id: number) {
+    return this.httpClient.delete(`${this.apiUrl}/${id}`);
   }
 }

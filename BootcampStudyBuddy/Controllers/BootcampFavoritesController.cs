@@ -75,7 +75,7 @@ namespace BootcampStudyBuddy.Controllers
         // POST: api/BootcampFavorites
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<BootcampFavorite>> PostBootcampFavorite(BootcampFavorite bootcampFavorite)
+        public async Task<ActionResult<BootcampFavorite>> PostBootcampFavorite([FromBody] BootcampFavorite bootcampFavorite)
         {
             _context.BootcampFavorites.Add(bootcampFavorite);
             await _context.SaveChangesAsync();

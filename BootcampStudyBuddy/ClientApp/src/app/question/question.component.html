@@ -1,4 +1,6 @@
+<h2>Hello {{user?.firstName}}</h2>
 <h2>These are the available Questions</h2>
+<logout-button></logout-button>
 
 <p *ngIf="!questions"><em>Loading...</em></p>
 
@@ -13,11 +15,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let question of questions">
-      <td><button class="btn-primary btn" id="{{ question.questionId }}_save_button" (click)="addQuestion(questions.value, answers.vale)">Save</button></td>
+      <td><button class="btn-primary btn" id="{{ question.questionId }}_save_button" (click)="addQuestion(question)">Save</button></td>
       <td #questions >{{ question.questions }}</td>
       <td id="{{ question.questionId }}" answer="false" width="400px" #answers>Click the show button to view the answer!</td>
       <td><button (click)="show(question.questionId)" id="{{ question.questionId }}_button" class="btn-primary btn">show</button></td>
-      <td><button (click)="dueces(question.questionId)" class="btn-primary btn">Delete</button></td>
 
     </tr>
 

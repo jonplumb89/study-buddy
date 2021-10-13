@@ -1,0 +1,42 @@
+.btn-primary {
+  background: transparent !important;
+  border: 1px solid !important;
+  border-radius: 50px !important;
+  padding: 8px 22px !important;
+  margin: 25px 1px !important;
+  color: #BF307F !important;
+  outline: none;
+  animation: slideIn .5s ease forwards .5s;
+}
+
+  .btn-primary:hover {
+    background-color: #BF307F !important;
+    border: none !important;
+    color: white !important;
+    transition: all 0.75s ease;
+  }
+
+.table-striped tbody tr {
+  background-color: none;
+  animation: slideUp .8s ease forwards .5s;
+}
+
+.table td, .table th {
+  padding: 2rem;
+  vertical-align: central;
+  border-top: 1px;
+  animation: ease-in .5s ease forwards .5s;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.1);
+}
+
+.table thead th {
+  vertical-align: none !important;
+  border-bottom: none !important;
+}
+
+.table {
+  text-align: left;
+}

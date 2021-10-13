@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+body {
+  background-color: #192245 !important;
+  font-size: 18px!important;
+  line-height: 30px;
+}
+
+.table {
+  width: 100%;
+  font-weight: 200;
+  margin-bottom: 1rem;
+  color: white !important;
+}
+
+.table thead th {
+    font-weight: 100 !important;
+    margin-bottom: 1rem;
+    color: white !important;
+  }
+
+.title {
+    color: white;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-weight: 200;
+  line-height: 1.2;
+  color: white!important;
+}
+
+.btn {
+  background: transparent !important;
+  border: 1px solid !important;
+  border-radius: 50px !important;
+  padding: 8px 22px !important;
+  margin: 25px 1px !important;
+  color: #BF307F !important;
+  outline: none;
+}
+
+.btn:hover {
+  background-color: #BF307F !important;
+  border: none !important;
+  color: white !important;
+  transition: all 0.75s ease;
+}

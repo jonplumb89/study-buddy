@@ -1,0 +1,21 @@
+<h2>Welcome {{user?.firstName}} to your favorites</h2>
+<logout-button></logout-button>
+
+<p *ngIf="!favorites"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="favorites">
+    <thead>
+        <tr>
+            <th><b>QUESTION</b></th>
+            <th><b>ANSWER</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let favorite of favorites">
+            <td>{{ favorite.questions }}</td>
+            <td>{{ favorite.answers }}</td>
+            <td><button (click)="dueces(favorite.favoritesId)" class="btn-primary btn">Delete</button></td>
+
+        </tr>
+    </tbody>
+</table>

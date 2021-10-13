@@ -1,0 +1,27 @@
+<div class='container'>
+    <div class="container_content">
+        <div class="container_content_inner">
+            <div class="title">
+                <h1 class="title1">Welcome To The Study Buddy App</h1>
+                <h2 class="please">Please Select A User</h2>
+            </div>
+            <div class="par">
+                <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="users">
+                    <tbody>
+                        <tr *ngFor="let user of users">
+                            <td>{{ user.firstName }}</td>
+                            <td>{{ user.lastName }}</td>
+                            <button class="btn-primary btn" (click)="login(user)">Login</button>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container_outer_img">
+        <div class="img-inner">
+            <img src='./assets/studybuddyimage.png' alt="" class="container_img" />
+        </div>
+    </div>
+</div>
+<div class="overlay"></div>

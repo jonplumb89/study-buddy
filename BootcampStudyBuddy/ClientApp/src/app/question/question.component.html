@@ -1,0 +1,26 @@
+<h2>Hello {{user?.firstName}}</h2>
+<h2>These are the available Questions</h2>
+<logout-button></logout-button>
+
+<p *ngIf="!questions"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="questions">
+    <thead>
+        <tr>
+            <th><b>FAVORITE</b></th>
+            <th><b>QUESTION</b></th>
+            <th><b>ANSWER</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let question of questions">
+
+            <td><input class="form-check-input" type="checkbox" id="{{ question.questionId }} flexCheckIndeterminate" (click)="addQuestion(question)"></td>
+            <td #questions>{{ question.questions }}</td>
+            <td id="{{ question.questionId }}" answer="false" width="400px" #answers>Click the show button to view the answer!</td>
+            <td><button (click)="show(question.questionId)" id="{{ question.questionId }}_button" class="btn-primary btn">show</button></td>
+            <td><button (click)="dueces(question.questionId)" class="btn-primary btn">Delete</button></td>
+        </tr>
+    </tbody>
+    <td><button class="save_all" id="{{ question.questionId }}_save_button" (click)="saveAll()">Save All</button></td>
+</table>
